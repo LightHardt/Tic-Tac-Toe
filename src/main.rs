@@ -333,4 +333,7 @@ fn main() {
         else { current_player = ai; }
         input.clear();
     }
+
+    println!("Press any key to quit");
+    io::stdin().read_line(&mut input).expect("Enter");
 }
