@@ -1,5 +1,5 @@
 # Tic-Tac-Toe
 ## Purpose
 Only to help me get more familiar in rust :crab:
-## To-do
-Implement adversarial search for ai move
+## Features
+Implemented minimax algorithm for the ai :robot: opponent
