@@ -254,7 +254,7 @@ impl Game {
     fn ai_move(&mut self, ai: i8, human: i8) {
         let mut best = i32::min_value();
         let mut ai_position = -1;
-        let depth = 4;
+        let depth = 10; // At four you could get it to lose easily this makes it harder
 
         let mut board = self.board.clone();
 
@@ -273,7 +273,10 @@ impl Game {
     }
 }
 
-fn main() {
+/**
+ * This function will run the game
+ */
+fn tic_tac_toe() {
     let mut game = Game::new();
     let mut game_over = false;
     let mut input = String::new();
@@ -333,7 +336,23 @@ fn main() {
         else { current_player = ai; }
         input.clear();
     }
+}
 
-    println!("Press any key to quit");
-    io::stdin().read_line(&mut input).expect("Enter");
+fn main() {
+    let mut play_again = true;
+    let mut input = String::new();
+
+    while play_again {
+        tic_tac_toe();
+        println!("Press 1 to play again 2 to quit:");
+        io::stdin().read_line(&mut input).expect("Enter");
+
+        if input.trim().parse::<i8>().expect("Answer to if want play again") != 1 {
+            play_again = false;
+        }
+        else {
+            play_again = true;
+        }
+        input.clear();
+    }
 }
