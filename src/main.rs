@@ -14,8 +14,8 @@ impl Game {
     fn new() -> Self {
         // initialize 2D array to zero 
         let b: [[i8;3]; 3] = [[0;3];3];
-        let board = Game{ board: b };
-        board
+        let game = Game{ board: b };
+        game
     }
 
     /**
