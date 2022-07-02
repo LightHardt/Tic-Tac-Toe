@@ -8,5 +8,5 @@ Assumes you have rust & git setup on system
 ```
 git clone https://github.com/LightHardt/Tic-Tac-Toe.git && \
 cd Tic-Tac-Toe && \
-cargo run
+cargo run --release
 ```
