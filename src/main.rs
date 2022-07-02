@@ -299,9 +299,8 @@ fn tic_tac_toe() {
     input.clear();
 
     while !game_over {
-        game.print_board();
-
         if current_player == human {
+            game.print_board();
             println!("Make your move 1-9:");
             io::stdin().read_line(&mut input).expect("Failed to read line");
             while !game.player_move(current_player, input.trim().parse().unwrap(),&mut game.board) {
