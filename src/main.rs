@@ -2,6 +2,7 @@ use std::io;
 
 const SIZE: usize = 4;
 const WIN: i8 = 4;
+const DEPTH: i8 = 6;
 /**
  * Will hold key functions for Tic Tac Toe game
  */
@@ -288,13 +289,12 @@ impl Game {
     }
 
     /**
-     * Function makes a random move for AI based on 
-     * open slots randomly
+     * Function makes move for AI
      */
     fn ai_move(&mut self, ai: i8, human: i8) {
         let mut best = i32::min_value();
         let mut ai_position = 0;
-        let depth = 6; // At four you could get it to lose easily this makes it harder
+        let depth = DEPTH; // At four you could get it to lose easily this makes it harder
 
         let mut board = self.board.clone();
 
@@ -341,10 +341,10 @@ fn tic_tac_toe() {
     while !game_over {
         if current_player == human {
             game.print_board();
-            println!("Make your move 1-16:");
+            println!("Make your move 1-{}:",SIZE*SIZE);
             io::stdin().read_line(&mut input).expect("Failed to read line");
             while !game.player_move(current_player, input.trim().parse().unwrap(),&mut game.board) {
-                println!("Invalid move!\nMake your move 1-16:");
+                println!("Invalid move!\nMake your move 1-{}:",SIZE*SIZE);
                 input.clear();
                 io::stdin().read_line(&mut input).expect("Failed to read line");
             }
