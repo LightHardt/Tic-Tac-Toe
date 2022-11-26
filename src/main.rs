@@ -9,8 +9,8 @@ const SIZE: usize = 4;
  */
 const WIN: i8 = 4;
 /**
- * The difficulty of AI high number will effect
- * performance significantly depending on board size
+ * The difficulty of AI
+ * A high number will effect performance depending on board size
  */
 const DEPTH: i8 = 6;
 
@@ -305,7 +305,7 @@ impl Game {
     fn ai_move(&mut self, ai: i8, human: i8) {
         let mut best = i32::min_value();
         let mut ai_position = 0;
-        let depth = DEPTH; // At four you could get it to lose easily this makes it harder
+        let depth = DEPTH;
 
         let mut board = self.board.clone();
 
