@@ -1,8 +1,19 @@
 use std::io;
 
+/**
+ * Will be the size of board SIZE x SIZE
+ */
 const SIZE: usize = 4;
+/**
+ * Number needed in a row to win
+ */
 const WIN: i8 = 4;
+/**
+ * The difficulty of AI high number will effect
+ * performance significantly depending on board size
+ */
 const DEPTH: i8 = 6;
+
 /**
  * Will hold key functions for Tic Tac Toe game
  */
